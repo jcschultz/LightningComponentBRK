@@ -31,10 +31,12 @@ The following code snippets are for use with the Lightning Components BRK.
                         targetRecord="{!v.broker}"
                         layoutType="FULL" />
       <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.broker.fields.Name.value}">
-          <ul class="slds-list--vertical slds-has-dividers--top-space slds-grid slds-grid_align-spread slds-wrap slds-m-around_medium">
+          <ul class="slds-list--vertical slds-has-dividers--top-space slds-m-around_medium">
               <aura:iteration items="{!v.properties}" var="item">
-                  <li class="slds-list__item slds-size--1-of-2"><span class="slds-text-color--weak slds-m-right--small">Property:</span> {!item.Name}</li>
-                  <li class="slds-list__item slds-size--1-of-2 slds-text-align_right"><span class="slds-text-color--weak slds-m-right--small">Status:</span> {!item.Status__c}</li>
+                  <ul class="slds-list__item">
+                      <li class="slds-list__item"><span class="slds-text-color--weak slds-m-right--small">Property:</span> {!item.Name}</li>
+                      <li class="slds-list__item"><span class="slds-text-color--weak slds-m-right--small">Status:</span> {!item.Status__c}</li>
+                  </ul>
               </aura:iteration>           
           </ul>
       </lightning:card>
