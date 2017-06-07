@@ -5,17 +5,15 @@ The following code snippets are for use with the Lightning Components BRK.
 ### BrokerProperties - Step 1
 
   ```html
-  <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
-      <aura:attribute name="recordId" type="Id" />
-      <aura:attribute name="broker" type="Broker__c" />
-      <force:recordData aura:id="propertyService" 
-                        recordId="{!v.recordId}" 
-                        targetRecord="{!v.broker}"
-                        layoutType="FULL" />
-      <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.broker.fields.Name.value}">
+  <aura:attribute name="recordId" type="Id" />
+  <aura:attribute name="broker" type="Broker__c" />
+  <force:recordData aura:id="propertyService" 
+                    recordId="{!v.recordId}" 
+                    targetRecord="{!v.broker}"
+                    layoutType="FULL" />
+  <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.broker.fields.Name.value}">
 
-      </lightning:card>
-  </aura:component>
+  </lightning:card>
   ```
   
 ### BrokerProperties - Step 2
