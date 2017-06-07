@@ -1,4 +1,4 @@
-# LightningComponentBRK
+# Lightning Component BRK
 
 The following code snippets are for use with the Lightning Components BRK.
 
