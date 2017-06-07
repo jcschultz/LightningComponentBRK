@@ -2,7 +2,7 @@
 
 The following code snippets are for use with the Lightning Components BRK.
 
-### BrokerProperties - Step 1
+### Step 1
 
   ```html
   <aura:attribute name="recordId" type="Id" />
@@ -16,7 +16,7 @@ The following code snippets are for use with the Lightning Components BRK.
   </lightning:card>
   ```
   
-### BrokerProperties - Step 2
+### Step 2
 
   ```html
   <aura:component controller="PropertiesByBroker" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
@@ -41,7 +41,7 @@ The following code snippets are for use with the Lightning Components BRK.
   </aura:component>
   ```
   
-### BrokerPropertiesController - Step 1
+### Step 3
 
   ```js
   ({
@@ -52,7 +52,6 @@ The following code snippets are for use with the Lightning Components BRK.
           })
           action.setCallback(this, function(response) {
               var list = response.getReturnValue();
-              console.log("f: ", list)
               component.set("v.properties", list);
           })
           $A.enqueueAction(action);
