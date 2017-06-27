@@ -66,8 +66,6 @@ GFM Markdown table syntax is quite simple. It does not allow row or cell spannin
 
 | Do   |      Say      |
 |----------|:-------------:|
-| col 1 is |  left-aligned |
-**DO**	**SAY**
 Click on the Properties tab and choose a property.	The Dreamhouse app is an app for a ficticious real estate company to help them manage their inventory of houses, brokers, prospects, etc. The default Property Record page has been modified with several Lightning Components using Lightning App Builder.
 Point out the Lightning Components in the righthand column.	Each of the items in the righthand column is a Lightning Component. In other words, they are each a piece of standalone functionality. But just because the individual components are independant of one another on the page, they can still communicate with each other, as well as pull data from the record itself.
 Point to the **Days on the Market** component at the top of the column.	For example, this component is calculating the number of days on the market using the **Date Listed** field in the record.
