@@ -63,12 +63,7 @@ None
 |Click on the Brokers tab and choose a broker.	| Now that we've looked at several components in action, let's talk about how you actually build a Lightning Component. We're going to create a component for the Broker Record page to show us a list of the properties assigned to an individual broker.
 | Open the **Developer Console** from the **Setup** menu. |	We're going to use the Developer Console to help us build the component.
 |Choose **New > Lightning Component**. | When you create a Lightning Component, in addition to giving the component a name, we also need to specify where the component is going to be used. 
-|Give the component a name of **BrokerProperties** and check the **Lightning Record Page** checkbox. Then click **Submit**. |	The five checkboxes allow us to add the necessary interfaces to the component. 
-* Lightning Tab specifies that the component can be used in Salesforce1.
-* Lightning Page specifies that the component can be used on any Lightning Page that supports customization.
-* Lightning Record Page specifies that the component can be used on an object Record page, which is what we will use.
-* Lightning Communities Page obviously makes the component available for Communities pages. 
-* And Lightning Quick Action means the component can be used as a quick action.
+|Give the component a name of **BrokerProperties** and check the **Lightning Record Page** checkbox. Then click **Submit**. |	The five checkboxes allow us to add the necessary interfaces to the component. * Lightning Tab specifies that the component can be used in Salesforce1. * Lightning Page specifies that the component can be used on any Lightning Page that supports customization. * Lightning Record Page specifies that the component can be used on an object Record page, which is what we will use. * Lightning Communities Page obviously makes the component available for Communities pages.  * And Lightning Quick Action means the component can be used as a quick action.
 |Point out the **implements=""** attribute. |	Because we checked the **Lightning Record Page** checkbox, we can see the interfaces **flexipage:AvailableForRecordHome** and **force:hasRecordId** have been added to the component.
 |Paste the code from **Step 1** on the github page into the component, then choose **Save**. |	In the interest of time, I'm just going to copy a bit of code into the component to get us started. The Lightning Framework uses several key concepts that we can see here.
 |Highlight the two **<aura:attribute>** tags. |	The first is the concept of **aura:attributes**. These are simply value providers. In other words, they are a place where we store data that can be displayed or manipulated by the component.
