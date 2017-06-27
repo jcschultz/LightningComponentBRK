@@ -48,8 +48,7 @@ How to use it?
 
 | Do   |      Say      |
 |----------|-------------|
-Click on the Properties tab and choose a property.	The Dreamhouse app is an app for a ficticious real estate company to help them manage their inventory of houses, brokers, prospects, etc. The default Property Record page has been modified with several Lightning Components using Lightning App Builder.
-|Point out the Lightning Components in the righthand column.	Each of the items in the righthand column is a Lightning Component. In other words, they are each a piece of standalone functionality. But just because the individual components are independant of one another on the page, they can still communicate with each other, as well as pull data from the record itself.|
+|Click on the Properties tab and choose a property.	The Dreamhouse app is an app for a ficticious real estate company to help them manage their inventory of houses, brokers, prospects, etc. The default Property Record page has been modified with several Lightning Components using Lightning App Builder.|Point out the Lightning Components in the righthand column.	Each of the items in the righthand column is a Lightning Component. In other words, they are each a piece of standalone functionality. But just because the individual components are independant of one another on the page, they can still communicate with each other, as well as pull data from the record itself.|
 Point to the **Days on the Market** component at the top of the column.	For example, this component is calculating the number of days on the market using the **Date Listed** field in the record.
 Point to the **Property Map** component.	The Property Map is picking up the address from the record and using it to place a pin on the map in the proper location.
 Point to the **Similar Properties** component.	In addition to grabbing fields from a record when the page loads, Lightning Components can also "listen" for events to occur. For example, this component has found similar properties based upon the current price of the record. In this case, it is looking for properties that are plus or minus $100000.
@@ -59,7 +58,6 @@ Drag another copy of the **Similar Properties** component onto the page below th
 Change the Search Criteria to **Bedrooms**.	For example, we can ask for similar properties by the number of bedrooms.
 Click **Save** and then click the **Back** link.	So now we have a single component performing two different tasks.
 Click the Edit (pencil) icon for one of the properties in the Similar Properties component that is searching by **price**. Choose a different **Status** and click **Save.**	Using the magic of something called Lightning Data Services, this component can even update a record that we aren't even looking at. Lightning Data Service is also what allowed the component to react to the price change. 
-
 Clicking this Edit icon is pulling the actual data from the record. Let's change the **Status** on this component. And we can see it has, in fact, updated back in the component. And, by the way, there was no Apex Class involved in updating the record. Instead, again, Lightning Data Service has updated the record.
 Point to the **Neighborhood Explorer** component.	Lightning Components are not limited to talking to Salesforce. In the Neighborhood Explorer component, we are again capturing the address for the Property Record like we did in the Property Map component. 
 
