@@ -13,9 +13,9 @@ The following code snippets are for use with the Lightning Components BRK.
   <aura:attribute name="broker" type="Broker__c" />
   <force:recordData aura:id="propertyService" 
                     recordId="{!v.recordId}" 
-                    targetRecord="{!v.broker}"
+                    targetFields="{!v.broker}"
                     layoutType="FULL" />
-  <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.broker.fields.Name.value}">
+  <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.broker.Name}">
 
   </lightning:card>
   ```
@@ -30,9 +30,9 @@ The following code snippets are for use with the Lightning Components BRK.
       <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
       <force:recordData aura:id="propertyService" 
                         recordId="{!v.recordId}" 
-                        targetRecord="{!v.broker}"
+                        targetFields="{!v.broker}"
                         layoutType="FULL" />
-      <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.broker.fields.Name.value}">
+      <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.broker.Name}">
           <ul class="slds-list--vertical slds-has-dividers--top-space slds-m-around_medium">
               <aura:iteration items="{!v.properties}" var="item">
                   <ul class="slds-list__item">
