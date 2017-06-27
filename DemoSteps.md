@@ -1,11 +1,10 @@
 # Lightning Components BRK
 
- Contact: **Greg Rewis, Principal Developer Evangelist, [grewis@salesforce.com](mailto:grewis@salesforce.com), +1-602-451-4858**
-
+ Contact: **Greg Rewis**, Principal Developer Evangelist, [grewis@salesforce.com](mailto:grewis@salesforce.com)
 
 ## **Change Log**
 
-6/7/2017	Greg Rewis	[grewis@salesforce.com](mailto:grewis@salesforce.com)	Notes
+6/7/2017	Greg Rewis
 
 ## Objectives
 
