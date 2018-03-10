@@ -25,23 +25,28 @@ The following code snippets are for use with the Lightning Components BRK.
   ```html
   <aura:component controller="PropertiesByBroker" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
       <aura:attribute name="recordId" type="Id" />
-      <aura:attribute name="broker" type="Broker__c" />
-      <aura:attribute name="properties" type="Object[]" />
+      <aura:attribute name="brokerRecord" type="Broker__c" />
+      <aura:attribute name="propertyRecords" type="Object[]"  />
+      <aura:attribute name="columns" type="List" />
+      <aura:attribute name="sortedBy" type="String" />
+      <aura:attribute name="sortedDirection" type="String" />
+
       <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
-      <force:recordData aura:id="propertyService" 
-                        recordId="{!v.recordId}" 
-                        targetFields="{!v.broker}"
-                        layoutType="FULL" />
-      <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.broker.Name}">
-          <ul class="slds-list--vertical slds-has-dividers--top-space slds-m-around_medium">
-              <aura:iteration items="{!v.properties}" var="item">
-                  <ul class="slds-list__item">
-                      <li class="slds-list__item"><span class="slds-text-color--weak slds-m-right--small">Property:</span> {!item.Name}</li>
-                      <li class="slds-list__item"><span class="slds-text-color--weak slds-m-right--small">Status:</span> {!item.Status__c}</li>
-                  </ul>
-              </aura:iteration>           
-          </ul>
-      </lightning:card>
+
+      <force:recordData aura:id="brokerLookup" 
+                        recordId="{!v.recordId}"
+                        targetFields="{!v.brokerRecord}" 
+                        fields="Picture__c" 
+                        layoutType="FULL"  />
+
+      <lightning:card iconName="custom:custom85" title="{! 'Properties for ' + v.brokerRecord.Name }">
+          <lightning:datatable aura:id="datatable" 
+                               data="{!v.propertyRecords}" 
+                               columns="{!v.columns}" 
+                               onrowselection="{!c.doSelect}" 
+                               keyField="id" 
+                               resizeColumnDisabled="true" />
+              </lightning:card>
   </aura:component>
   ```
   
