@@ -28,9 +28,6 @@ The following code snippets are for use with the Lightning Components BRK.
       <aura:attribute name="brokerRecord" type="Broker__c" />
       <aura:attribute name="propertyRecords" type="Object[]"  />
       <aura:attribute name="columns" type="List" />
-      <aura:attribute name="selectedRecord" type="String" />
-      <aura:attribute name="sortedBy" type="String" />
-      <aura:attribute name="sortedDirection" type="String" />
 
       <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
@@ -44,9 +41,11 @@ The following code snippets are for use with the Lightning Components BRK.
           <lightning:datatable aura:id="datatable" 
                                data="{!v.propertyRecords}" 
                                columns="{!v.columns}" 
-                               onrowselection="{!c.doSelect}" 
                                keyField="id" 
-                               resizeColumnDisabled="true" />
+                               resizeColumnDisabled="true"
+                               onrowselection="{!c.doSelect}"
+                               onrowaction="{! c.handleRowAction }"
+                               onsort="{!c.updateColumnSorting}" />
               </lightning:card>
   </aura:component>
   ```
@@ -93,25 +92,6 @@ The following code snippets are for use with the Lightning Components BRK.
         component.set("v.propertyRecords", propertyList);
       })
       $A.enqueueAction(action);
-    },
-      handleRowAction: function (cmp, event, helper) {
-          cmp.set("v.showDialog", "true");
-          var action = event.getParam('action');
-          var row = event.getParam('row');
-          switch (action.name) {
-              case 'edit_details':
-                  cmp.set("v.selectedRecord", row.Id);    
-                  break;
-              case 'delete':
-                  alert("This would delete: ", row.Id);
-                  break;
-          }
-      },
-    doSelect: function(component, event, helper) {
-      var selectedRows = event.getParam('selectedRows');
-      for (var i = 0; i < selectedRows.length; i++) {
-        alert("You selected: " + selectedRows[i].Name);
-      }
     }
   })
   ```
