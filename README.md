@@ -103,10 +103,7 @@ The following code snippets are for use with the Lightning Components BRK.
                   cmp.set("v.selectedRecord", row.Id);    
                   break;
               case 'delete':
-                  var rows = cmp.get('v.propertyRecords');
-                  var rowIndex = rows.indexOf(row);
-                  rows.splice(rowIndex, 1);
-                  cmp.set('v.propertyRecords', rows);
+                  alert("This would delete: ", row.Id);
                   break;
           }
       },
