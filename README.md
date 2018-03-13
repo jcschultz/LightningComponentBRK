@@ -193,6 +193,16 @@ The following code snippets are for use with the Lightning Components BRK.
       for (var i = 0; i < selectedRows.length; i++) {
         alert("You selected: " + selectedRows[i].Name);
       }
+    },
+    updateColumnSorting: function(component, event, helper) {
+      var fieldName = event.getParam('fieldName');
+      var sortDirection = event.getParam('sortDirection');
+          if (fieldName == "url") {
+              fieldName = "Name";
+          }
+      component.set("v.sortedBy", fieldName);
+      component.set("v.sortedDirection", sortDirection);
+      helper.sortData(component, fieldName, sortDirection);
     }
-    })  
+  })  
   ```
