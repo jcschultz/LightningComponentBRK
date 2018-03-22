@@ -6,7 +6,7 @@ The following code snippets are for use with the Lightning Components BRK.
 
 [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6A0000016uhv](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6A0000016uhv)
 
-### Step 1
+### Step 1: Add to New BrokerProperties.cmp
 
   ```html
   <aura:attribute name="recordId" type="Id" />
@@ -20,7 +20,7 @@ The following code snippets are for use with the Lightning Components BRK.
   </lightning:card>
   ```
   
-### Step 2
+### Step 2: Edit BrokerProperties.cmp
 
   ```html
   <aura:component controller="PropertiesByBroker" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
@@ -50,7 +50,7 @@ The following code snippets are for use with the Lightning Components BRK.
   </aura:component>
   ```
   
-### Step 3
+### Step 3: Add to BrokerPropertiesController.js
 
   ```js
   ({
@@ -96,7 +96,7 @@ The following code snippets are for use with the Lightning Components BRK.
   })
   ```
   
-### Step 4
+### Step 4: Edit BrokerProperties.cmp
 
   ```html
   <aura:component controller="PropertiesByBroker" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
@@ -132,7 +132,7 @@ The following code snippets are for use with the Lightning Components BRK.
   </aura:component>
   ```
  
-### Step 5
+### Step 5: Edit BrokerPropertiesController.js
 
   ```js
   ({
@@ -207,7 +207,7 @@ The following code snippets are for use with the Lightning Components BRK.
   })  
   ```
 
-### Step 6
+### Step 6: Add to BrokerPropertiesHelper.js
 
   ```js
   ({
